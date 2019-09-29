@@ -1,0 +1,10 @@
+<?php
+    $customer = $block->getCustomerData();
+    $_objectManager = \Magento\Framework\App\ObjectManager::getInstance(); //instance of\Magento\Framework\App\ObjectManager
+    $storeManager = $_objectManager->get('Magento\Store\Model\StoreManagerInterface');
+    $currentStore = $storeManager->getStore();
+    $baseUrl = $currentStore->getBaseUrl('media');
+?>
+<p>Name: <?= $customer->getFirstname() . ' ' . $customer->getLastname() ?></p>
+<p>Email: <?= $customer->getEmail() ?></p>
+<!--<p>Avatar: <img src="--><?//= $baseUrl. 'customer' .$customer->getCustomAttributes()['avatar']->getValue() ?><!--" style="max-height: 150px;max-width: 150px"></p>-->
