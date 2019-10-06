@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Project1_Test1::module"
+             title="Manufacturer"
+             translate="title"
+             module="Project1_Test1"
+             sortOrder="15"
+             resource="Project1_Test1::module"/>
+        <add id="Project1_Test1::manufacturer"
+             title="Facturer"
+             module="Project1_Test1"
+             sortOrder="50"
+             action="test1/manufacturer/index"
+             parent="Project1_Test1::module"
+             resource="Project1_Test1::manufacturer"/>
+    </menu>
+</config>

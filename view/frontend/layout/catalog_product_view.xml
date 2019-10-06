@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="product.info.form.content">
+            <block class="Project1\Test1\Block\Manufacturer"
+                   name="product.222info.custom_attribute"
+                   template="Project1_Test1::manufacturer.phtml"
+                   cacheable="false" />
+        </referenceContainer>
+    </body>
+</page>

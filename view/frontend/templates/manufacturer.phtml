@@ -1,0 +1,39 @@
+<?php
+/**
+ * @var \Project1\Test1\Block\Manufacturer $block
+ */
+$data = $block->getProduct();
+?>
+<div>
+    <div class="dib">Manufacturer : </div><div class="name dib"> <?php echo $data['name']?></div>
+</div>
+
+
+<style>
+    .dib{ display: inline-block;}
+    .name{
+        cursor: pointer;
+        color:#006bb4;
+    }
+</style>
+
+<script>
+    require([
+        'jquery',
+        'Magento_Ui/js/modal/alert',
+    ],function ($,alert) {
+        $(".name").on("click",function () {
+            alert({
+                title: "Manufacturer Information",
+                content: "Name : <?php echo $data['name'] ?><br>Street Address : <?php echo $data['address_street'] ?><br>City : <?php echo $data['address_city'] ?><br>Country : <?php echo $data['address_country'] ?><br>Phone: <?php echo $data['contact_phone'] ?>",
+                autoOpen: true,
+                clickableOverlay: true,
+                focus: "",
+                actions: {
+                    always: function(){
+                    }
+                }
+            });
+        })
+    })
+</script>
