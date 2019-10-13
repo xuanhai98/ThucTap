@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Magenests_XuanHai::module"
+             title="XuanHai"
+             translate="title"
+             module="Magenests_XuanHai"
+             sortOrder="15"
+             resource="Magenests_XuanHai::module"/>
+        <add id="Magenests_XuanHai::vendor"
+             title="Vendors"
+             module="Magenests_XuanHai"
+             sortOrder="50"
+             action="xuanhai/vendor/index"
+             parent="Magenests_XuanHai::module"
+             resource="Magenests_XuanHai::vendor"/>
+    </menu>
+</config>

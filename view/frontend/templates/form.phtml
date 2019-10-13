@@ -1,0 +1,53 @@
+<div>
+Customer Id: <input class="a" type="text"><br><br><button id="click" class="b"">Check Customer</button>
+</div>
+<script type="text/javascript">
+    require([
+        'jquery',
+        'Magento_Ui/js/modal/alert',
+    ],function ($,alert) {
+        $("#click").on("click",function () {
+            var value = $(".a").val();
+            $.ajax({
+                type: "GET",
+                dataType: "json",
+                url: "<?php echo $this->getUrl().'/xuanhai/index/ajax'?>",
+                data: {value:value},
+                success: function (data) {
+    alert({
+                        title: "Magenest Part Time Test",
+                        content: "Id: "+data.id+"<br>Name: "+data.firstname+" "+data.lastname+"<br>Email: "+data.email,
+                        autoOpen: true,
+                        clickableOverlay: true,
+                        focus: "",
+                        actions: {
+        always: function(){
+            // console.log("modal closed");
+        }
+    }
+                    });
+                },
+                error: function (error) {
+    alert({
+                        title: "Error",
+                        content: "This I is ndot exist!",
+                        autoOpen: true,
+                        clickableOverlay: true,
+                        focus: "",
+                        actions: {
+        always: function(){
+            // console.log("modal closed");
+        }
+    }
+                    });
+                }
+            });
+        })
+    })
+</script>
+
+<style>
+    .a{ width: 300px !important;}
+    .b{ margin: 0 10px; vertical-align: middle;}
+</style>
+
