@@ -1,0 +1,57 @@
+<?php
+$hotel=$block->getHotel();
+?>
+<div>
+    <label class="label" for="qty"><span><?php echo __('Room Type') ?></span></label>
+    <select>
+        <option>---Please select room type---</option>
+        <option>Single</option>
+        <option>Double</option>
+        <option>Triple</option>
+    </select>
+</div>
+Location
+<select id="mySelect" name="extra_location" form="product_addtocart_form" onclick="changeValModal()">
+    <option>---Please select location hotel---</option>
+    <?php
+    for ($i=0;$i<sizeof($hotel);$i++)
+    {
+        echo "<option>".$hotel[$i]."</option>";
+    }
+    ?>
+</select>
+
+<div id="myModal" class="modal" style="display: none; position: fixed; z-index: 1; padding-top: 100px; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgb(0,0,0); background-color: rgba(0,0,0,0.4);">
+
+    <div class="modal-content" style="background-color: #fefefe; margin: auto; padding: 20px; border: 1px solid #888; width: 80%;">
+        <span class="close" style="color: #aaaaaa;float: right;font-size: 28px;font-weight: bold;">&times;</span>
+        <fieldset>
+            <legend>Hotel Detail</legend>
+            <p id="contentModal"></p>
+        </fieldset>
+    </div>
+
+</div>
+<script>
+    var modal = document.getElementById("myModal");
+    var span = document.getElementsByClassName("close")[0];
+
+    function changeValModal() {
+        var selectVal = document.getElementById("mySelect").value;
+        modal.style.display = "block";
+        var res = selectVal.split("-");
+        document.getElementById("contentModal").innerHTML =
+            'Name: ' + res[0]+'<br>'+
+            'Stress: ' + res[1]+'<br>'+
+            'City: ' + res[2]+'<br>'+
+            'Country: ' + res[3]+'<br>'+
+            'Phone: ' + res[4]+'<br>'+
+            'Single Room: ' + res[5]+'<br>'+
+            'Double Room: ' + res[6]+'<br>'+
+            'Triple Romm: ' + res[7]+'<br>'
+        ;
+    }
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+</script>

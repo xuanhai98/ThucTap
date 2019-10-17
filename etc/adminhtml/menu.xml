@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Magenest3_XuanHai::module"
+             title="Hotel"
+             translate="title"
+             module="Magenest3_XuanHai"
+             sortOrder="15"
+             resource="Magenest3_XuanHai::module"/>
+        <add id="Magenest3_XuanHai::hotel"
+             title="MoonNight"
+             module="Magenest3_XuanHai"
+             sortOrder="50"
+             action="xuanhai/hotel/index"
+             parent="Magenest3_XuanHai::module"
+             resource="Magenest3_XuanHai::hotel"/>
+    </menu>
+</config>

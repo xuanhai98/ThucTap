@@ -1,0 +1,206 @@
+<?xml version="1.0" ?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">hotel_form.hotel_form_data_source</item>
+            <item name="deps" xsi:type="string">hotel_form.hotel_form_data_source</item>
+        </item>
+        <item name="label" translate="true" xsi:type="string">General Information</item>
+        <item name="config" xsi:type="array">
+            <item name="dataScope" xsi:type="string">data</item>
+            <item name="namespace" xsi:type="string">hotel_form</item>
+        </item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+        <item name="buttons" xsi:type="array">
+            <item name="back" xsi:type="string">Magenest3\XuanHai\Block\Adminhtml\Hotel\Edit\BackButton</item>
+            <item name="delete" xsi:type="string">Magenest3\XuanHai\Block\Adminhtml\Hotel\Edit\DeleteButton</item>
+            <item name="save" xsi:type="string">Magenest3\XuanHai\Block\Adminhtml\Hotel\Edit\SaveButton</item>
+            <item name="save_and_continue" xsi:type="string">Magenest3\XuanHai\Block\Adminhtml\Hotel\Edit\SaveAndContinueButton</item>
+        </item>
+    </argument>
+    <dataSource name="hotel_form_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Magenest3\XuanHai\Model\Hotel\DataProvider</argument>
+            <argument name="name" xsi:type="string">hotel_form_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">main_table.hotel_id</argument>
+            <argument name="requestFieldName" xsi:type="string">hotel_id</argument>
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="submit_url" path="*/*/save" xsi:type="url"/>
+                </item>
+            </argument>
+        </argument>
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+    </dataSource>
+    <fieldset name="General">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string"/>
+            </item>
+        </argument>
+        <field name="hotel_id">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" translate="true" xsi:type="string">ID</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">Hotel</item>
+                    <item name="sortOrder" xsi:type="number">10</item>
+                    <item name="visible" xsi:type="boolean">false</item>
+                    <item name="componentDisabled" xsi:type="boolean">false</item>
+                    <item name="dataScope" xsi:type="string">hotel_id</item>
+                </item>
+            </argument>
+        </field>
+        <field name="hotel_name">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" translate="true" xsi:type="string">Hotel Name</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="sortOrder" xsi:type="number">11</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataScope" xsi:type="string">hotel_name</item>
+                    <item name="additionalClasses" xsi:type="string">input_hotel_name</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="location_street">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" translate="true" xsi:type="string">Location Street</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="sortOrder" xsi:type="number">12</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataScope" xsi:type="string">location_street</item>
+                    <item name="additionalClasses" xsi:type="string">input_location_street</item>
+                </item>
+            </argument>
+        </field>
+        <field name="location_city">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" translate="true" xsi:type="string">Location City</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="sortOrder" xsi:type="number">13</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataScope" xsi:type="string">location_city</item>
+                    <item name="additionalClasses" xsi:type="string">input_location_city</item>
+                </item>
+            </argument>
+        </field>
+        <field name="location_state">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" translate="true" xsi:type="string">Location State</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="sortOrder" xsi:type="number">14</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataScope" xsi:type="string">location_state</item>
+                    <item name="additionalClasses" xsi:type="string">input_location_state</item>
+                </item>
+            </argument>
+        </field>
+        <field name="location_country">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" translate="true" xsi:type="string">Location Country</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="sortOrder" xsi:type="number">15</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataScope" xsi:type="string">location_country</item>
+                    <item name="additionalClasses" xsi:type="string">input_location_country</item>
+                </item>
+            </argument>
+        </field> <field name="contact_phone">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" translate="true" xsi:type="string">Contact Phone</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="sortOrder" xsi:type="number">16</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataScope" xsi:type="string">contact_phone</item>
+                    <item name="additionalClasses" xsi:type="string">input_contact_phone</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="min_text_length" xsi:type="number">10</item>
+                        <item name="max_text_length" xsi:type="number">10</item>
+                        <item name="validate-number" xsi:type="number">0</item>
+                    </item>
+                </item>
+            </argument>
+        </field> <field name="total_available_room">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" translate="true" xsi:type="string">Total Available Room</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="sortOrder" xsi:type="number">17</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataScope" xsi:type="string">total_available_room</item>
+                    <item name="additionalClasses" xsi:type="string">input_total_available_room</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="validate-number" xsi:type="number">0</item>
+                    </item>
+                </item>
+            </argument>
+        </field> <field name="available_single">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" translate="true" xsi:type="string">Available Single</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="sortOrder" xsi:type="number">18</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataScope" xsi:type="string">available_single</item>
+                    <item name="additionalClasses" xsi:type="string">input_available_single</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="validate-number" xsi:type="number">0</item>
+                    </item>
+                </item>
+            </argument>
+        </field> <field name="available_double">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" translate="true" xsi:type="string">Available Double</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="sortOrder" xsi:type="number">19</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataScope" xsi:type="string">available_double</item>
+                    <item name="additionalClasses" xsi:type="string">input_available_double</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="validate-number" xsi:type="number">0</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="available_triple">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" translate="true" xsi:type="string">Available Triple</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="sortOrder" xsi:type="number">20</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataScope" xsi:type="string">available_triple</item>
+                    <item name="additionalClasses" xsi:type="string">input_available_triple</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="validate-number" xsi:type="number">0</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+    </fieldset>
+</form>
