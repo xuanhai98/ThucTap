@@ -1,0 +1,23 @@
+<?php
+$blockRoom = $block->getRoomData();
+?>
+<table>
+    <tr>
+        <th>Product ID</th>
+        <th>Room Name</th>
+        <th>Price</th>
+        <th>Actions</th>
+    </tr>
+    <?php foreach ($blockRoom as $data){?>
+        <tr>
+            <td><?php echo $data["product_id"]; ?></td>
+            <td><?php echo $data["room_name"]; ?></td>
+            <td><?php echo $data["price"]; ?></td>
+            <td data-th="<?php echo $block->escapeHtml(__('Actions')) ?>" class="col actions">
+                <a href="<?php  echo $block->getUrl('cybergame/room/edit', ['id'=>$data["id"]])?>" class="action edit">
+                    <span><?php echo __('Edit')?></span>
+                </a>
+            </td>
+        </tr>
+    <?php }?>
+</table>

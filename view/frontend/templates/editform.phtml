@@ -1,0 +1,32 @@
+<?php
+$blockRoom = $block->getRoomData();
+?>
+<form method="post" action="<?php echo $block->getUrl('cybergame/room/saveroom')?>">
+    <h2>Edit Room ID: <?php echo $blockRoom->getId(); ?></h2>
+    <input type="hidden" id="id" name="id" value="<?php echo $blockRoom->getId(); ?>">
+    <label for="room_name">Room Name:</label>
+    <div class="control">
+        <input type="text" name="room_name" value="<?php echo $blockRoom->getRoomName(); ?>" id="room_name" disabled>
+    </div>
+    <label for="price">Price:</label>
+    <div class="control">
+        <input type="number" name="price" value="<?php echo $blockRoom->getPrice(); ?>" id="price" disabled>
+    </div>
+    <label for="number_pc">Number PC:</label>
+    <div class="control">
+        <input type="number" name="number_pc" value="<?php echo $blockRoom->getNumberPc(); ?>" id="number_pc">
+    </div>
+    <label for="address">Address:</label>
+    <div class="control">
+        <input type="text" name="address" value="<?php echo $blockRoom->getAddress(); ?>" id="address">
+    </div>
+    <label for="food_price">Food Price:</label>
+    <div class="control">
+        <input type="number" name="food_price" value="<?php echo $blockRoom->getFoodPrice(); ?>" id="food_price">
+    </div>
+    <label for="food_price">Drink Price:</label>
+    <div class="control">
+        <input type="number" name="drink_price" value="<?php echo $blockRoom->getDrinkPrice(); ?>" id="drink_price">
+    </div><br>
+    <input type="submit" name="editForm" value="Save" id="editForm">
+</form>

@@ -1,0 +1,11 @@
+<?php
+$blockRoom = $block->getRoomData();
+?>
+<p>Number PC: <?php echo $blockRoom->getNumberPc(); ?></p>
+<p>Address: <?php echo $blockRoom->getAddress(); ?></p>
+<p>Food price: <span id="food_price"><?php echo $blockRoom->getFoodPrice(); ?></span></p>
+<p>Drink price: <span id="drink_price"><?php echo $blockRoom->getDrinkPrice(); ?></span></p>
+<label for="account_name">Account Name</label>
+<input type="text" name="account_name" id="account_name">
+<div class="check-account"> </div>
+<input type="hidden" name="account" id="account">
